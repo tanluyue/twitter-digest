@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chirp - Daily Digest</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Chirp</h1>
+      <div id="date-nav">
+        <button id="prev-day">&lt;</button>
+        <span id="current-date"></span>
+        <button id="next-day">&gt;</button>
+      </div>
+    </header>
+
+    <nav id="tab-nav">
+      <button class="tab active" data-tab="digest">Digest</button>
+      <button class="tab" data-tab="liked">Liked</button>
+      <button class="tab" data-tab="bookmarked">Saved</button>
+    </nav>
+
+    <div id="digest-container" class="tab-content">
+      <div id="loading" class="hidden">Generating digest...</div>
+      <div id="empty-state">
+        <p>No digest for this day yet.</p>
+        <button id="generate-btn">Generate Now</button>
+      </div>
+      <div id="digest-content" class="hidden">
+        <section id="summary-section">
+          <p id="digest-summary"></p>
+        </section>
+        <section id="topics-section">
+          <div id="topics-list"></div>
+        </section>
+        <section id="insights-section">
+          <h2>Insights</h2>
+          <ul id="insights-list"></ul>
+        </section>
+        <section id="trends-section">
+          <h2>Trends</h2>
+          <ul id="trends-list"></ul>
+        </section>
+      </div>
+    </div>
+
+    <div id="liked-container" class="tab-content hidden">
+      <div id="liked-empty" class="empty-hint">No liked tweets today.</div>
+      <div id="liked-list" class="tweet-list"></div>
+    </div>
+
+    <div id="bookmarked-container" class="tab-content hidden">
+      <div id="bookmarked-empty" class="empty-hint">No saved tweets today.</div>
+      <div id="bookmarked-list" class="tweet-list"></div>
+    </div>
+  </div>
+  <script type="module" src="sidepanel.ts"></script>
+</body>
+</html>
